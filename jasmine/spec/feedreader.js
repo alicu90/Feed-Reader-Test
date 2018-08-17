@@ -25,6 +25,23 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
+        
+        /* TODO: Write a test that loops through each feed
+         * in the allFeeds object and ensures it has a URL defined
+         * and that the URL is not empty.
+         */
+        it('contain a URL and not empty', function() {
+
+            // Loop
+            allFeeds.forEach(function(feed) {
+
+                // URL is defined
+                expect(feed.url).toBeDefined();
+
+                // URL is not empty
+                expect(feed.url.length).not.toBe(0);
+            });
+        });
 
         it('name and not empty', function() {
             allFeeds.forEach(function(feed) {
@@ -38,7 +55,7 @@ $(function() {
     // A new test named The menu
         describe('The menu', function(){
             it('should hide the menu', function () {
-                expect($('body').hasClass('menu-hiden')).toBe(true);
+                expect($('body').hasClass('menu-hidden')).toBe(true);
             });
 
          /* TODO: Write a test that ensures the menu changes
